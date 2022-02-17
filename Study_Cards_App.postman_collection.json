@@ -1,0 +1,639 @@
+{
+	"info": {
+		"_postman_id": "f4c5578a-e4a3-4f72-a006-c2c7b4c9a462",
+		"name": "Study Cards App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Decks",
+			"item": [
+				{
+					"name": "Get all decks",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create deck",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"My first deck\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update deck",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"My first deck updated\",\n    \"done\": true\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete deck",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cards",
+			"item": [
+				{
+					"name": "Get attachment URL",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0/cards/0effb943-34dd-4467-b27f-318ff9aa2ca8/attachment?side=frontside",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+								"cards",
+								"0effb943-34dd-4467-b27f-318ff9aa2ca8",
+								"attachment"
+							],
+							"query": [
+								{
+									"key": "side",
+									"value": "frontside"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Image",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/anton/Desktop/Demo Photos/CORS_ERRORS.png"
+							}
+						},
+						"url": {
+							"raw": "https://study-cards-app-images-484128672113-dev.s3.amazonaws.com/d0e7e189-393c-4000-ad22-cb96e6b573a4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXBOCRJFY7PUIBQRY%2F20220217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220217T020352Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIEgYobRrGx78V4i3eiOrRW7rWCbCERjFZZ63J%2Fx5OP6%2FAiEA60o0nL2r85i7yEwaa7otJb2wT%2F7J35wCyrmB7c4x%2F3QqswIIy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw0ODQxMjg2NzIxMTMiDNk%2BoNbzfstjabtQXCqHAl%2F2UsPNkvcHrDNEZJNpIza8c0qLwcTqwmcIJ7nxKxmkNeV5H%2FWpP89GOSCMFHowZh5mXTtGt07TGnggKl98APo3t%2FMJ4pOcLZ2WBuMuaO2ML8KcPcpSdbb896uMDtuhCIx%2F%2FwFaI70ZwSu5LY2QMyVCF8ZCLm9jzkCeHWyZjqepNaPg3pFCzM7hb3ugNVscoY8rd5mCwuTgygO%2F0Zza4RIdgaMBY0K%2Fw0ZsvKLnN4DmVpQvgNBcyRE%2BihO0JDeK9r3UyhXZo1zcJ2wcr7g3j0nsp1x1%2FRsZWerFVW29WtQ%2F%2FDCXfZfoXKWMffhbY3zRIDBX3wWgZXZRaMhsvyy0My%2FupTRxK5mBMJzZtpAGOpoB%2BDXudIv6S97pSbqefc8KVTMAIFkr8%2FMzxUKIzYQP7Wn5ivUKjxGZhzrHQtIPGTsBb33TYPJPoh0BW0Gv%2FgJrLvruxLxYx4BobT86WywCAoj5u5TmE2V49jjaSNynCElOc3D9T%2FGsJG2W0hs2etmk6SAgJUh3PxeLSczT73aRNyB1HPm1BSMEkUr%2FRP1b7rB4N%2FantLePf3enBg%3D%3D&X-Amz-Signature=c7f6f4e6ef7043c17b7c51fba7a08034fcfd4a4a54d2fa143e5bd700d95ab190&X-Amz-SignedHeaders=host",
+							"protocol": "https",
+							"host": [
+								"study-cards-app-images-484128672113-dev",
+								"s3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"d0e7e189-393c-4000-ad22-cb96e6b573a4"
+							],
+							"query": [
+								{
+									"key": "X-Amz-Algorithm",
+									"value": "AWS4-HMAC-SHA256"
+								},
+								{
+									"key": "X-Amz-Credential",
+									"value": "ASIAXBOCRJFY7PUIBQRY%2F20220217%2Fus-east-1%2Fs3%2Faws4_request"
+								},
+								{
+									"key": "X-Amz-Date",
+									"value": "20220217T020352Z"
+								},
+								{
+									"key": "X-Amz-Expires",
+									"value": "300"
+								},
+								{
+									"key": "X-Amz-Security-Token",
+									"value": "IQoJb3JpZ2luX2VjEIL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIEgYobRrGx78V4i3eiOrRW7rWCbCERjFZZ63J%2Fx5OP6%2FAiEA60o0nL2r85i7yEwaa7otJb2wT%2F7J35wCyrmB7c4x%2F3QqswIIy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw0ODQxMjg2NzIxMTMiDNk%2BoNbzfstjabtQXCqHAl%2F2UsPNkvcHrDNEZJNpIza8c0qLwcTqwmcIJ7nxKxmkNeV5H%2FWpP89GOSCMFHowZh5mXTtGt07TGnggKl98APo3t%2FMJ4pOcLZ2WBuMuaO2ML8KcPcpSdbb896uMDtuhCIx%2F%2FwFaI70ZwSu5LY2QMyVCF8ZCLm9jzkCeHWyZjqepNaPg3pFCzM7hb3ugNVscoY8rd5mCwuTgygO%2F0Zza4RIdgaMBY0K%2Fw0ZsvKLnN4DmVpQvgNBcyRE%2BihO0JDeK9r3UyhXZo1zcJ2wcr7g3j0nsp1x1%2FRsZWerFVW29WtQ%2F%2FDCXfZfoXKWMffhbY3zRIDBX3wWgZXZRaMhsvyy0My%2FupTRxK5mBMJzZtpAGOpoB%2BDXudIv6S97pSbqefc8KVTMAIFkr8%2FMzxUKIzYQP7Wn5ivUKjxGZhzrHQtIPGTsBb33TYPJPoh0BW0Gv%2FgJrLvruxLxYx4BobT86WywCAoj5u5TmE2V49jjaSNynCElOc3D9T%2FGsJG2W0hs2etmk6SAgJUh3PxeLSczT73aRNyB1HPm1BSMEkUr%2FRP1b7rB4N%2FantLePf3enBg%3D%3D"
+								},
+								{
+									"key": "X-Amz-Signature",
+									"value": "c7f6f4e6ef7043c17b7c51fba7a08034fcfd4a4a54d2fa143e5bd700d95ab190"
+								},
+								{
+									"key": "X-Amz-SignedHeaders",
+									"value": "host"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all cards",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0/cards",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete card",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0/cards/98aef1d1-ebf2-4c7d-9826-3a0cee2d1c0e",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+								"cards",
+								"98aef1d1-ebf2-4c7d-9826-3a0cee2d1c0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update card",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"backsides\": {\n        \"description\":\"Pedro Sánchez\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0/cards/98aef1d1-ebf2-4c7d-9826-3a0cee2d1c0e",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+								"cards",
+								"98aef1d1-ebf2-4c7d-9826-3a0cee2d1c0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create card",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"frontside\": {\n        \"description\":\"How much is 2 x 2?\"\n    },\n    \"backside\": {\n        \"description\":\"Four... maybe\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/decks/1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0/cards",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"decks",
+								"1afab6d0-8fe2-4c8c-b1b5-92f421f29ec0",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "sfsdt3456t53",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "openid profile email",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{auth0_client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{auth0_client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://{{auth0_domain}}/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://{{auth0_domain}}/authorize?audience={{auth0_audience}}",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://www.getpostman.com/oauth2/callback",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "AuthToken2",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiId",
+			"value": "q0w58g9f1g"
+		},
+		{
+			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "auth0_domain",
+			"value": "dev-fdockgfp.us.auth0.com"
+		},
+		{
+			"key": "auth0_client_id",
+			"value": "nM3xemaUCFpNxPb9gunWmSaT146ENs01"
+		},
+		{
+			"key": "auth0_client_secret",
+			"value": "lLvEMwpQa-Oj0KjaH02NRpjxM8g8i6tONLiyqBkJ6-wVD5wwDgZ4LBlWpvXeduAk"
+		},
+		{
+			"key": "auth0_audience",
+			"value": "https://q0w58g9f1g.execute-api.us-east-1.amazonaws.com/dev/"
+		}
+	]
+}

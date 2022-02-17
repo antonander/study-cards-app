@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "group",
+  "type": "object",
+  "properties": {
+    "frontside": {
+      "type": "object",
+      "properties": {
+        "description":{
+          "type": "string",
+          "minLength":1
+        } 
+      },
+      "required": [
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "backside": {
+      "type": "object",
+      "properties": {
+        "description":{
+          "type": "string",
+          "minLength":1
+        } 
+      },
+      "required": [
+        "description"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "anyOf": [
+    {"required": ["frontside"]},
+    {"required": ["backside"]}
+  ],
+  "additionalProperties": false
+}
